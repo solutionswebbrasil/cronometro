@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    padding: 20px;
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: white;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Números do relógio */
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.number-1 { transform: rotate(30deg); }
+.number-2 { transform: rotate(60deg); }
+.number-3 { transform: rotate(90deg); }
+.number-4 { transform: rotate(120deg); }
+.number-5 { transform: rotate(150deg); }
+.number-6 { transform: rotate(180deg); }
+.number-7 { transform: rotate(210deg); }
+.number-8 { transform: rotate(240deg); }
+.number-9 { transform: rotate(270deg); }
+.number-10 { transform: rotate(300deg); }
+.number-11 { transform: rotate(330deg); }
+
+/* Rotaciona o texto dos números de volta */
+.number > span {
+    display: block;
+    transform: rotate(-30deg);
+}
+
+.marker {
+    width: 2px;
+    height: 8px;
+    background: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 90px;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background: #333;
+    border-radius: 4px;
+    transform: rotate(0deg);
+    transition: transform 0.5s cubic-bezier(0.4, 2.1, 0.4, 0.9);
+}
+
+.hour-hand {
+    width: 4px;
+    height: 60px;
+    background: #333;
+    margin-left: -2px;
+}
+
+.min-hand {
+    width: 3px;
+    height: 80px;
+    background: #666;
+    margin-left: -1.5px;
+}
+
+.second-hand {
+    width: 2px;
+    height: 90px;
+    background: #C5FB01;
+    margin-left: -1px;
+}
+
+.center-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #C5FB01;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ... mantenha os estilos anteriores até o #caixa-numeros ... */
+
+#caixa-numeros {
+    width: 280px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.numeros {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    display: inline-block;
+    min-width: 50px;
+}
+
+.numero-verde {
+    color: #C5FB01;
+}
+
+#caixa-botoes {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.botoes {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#start {
+    background: #C5FB01;
+    color: #000;
+}
+
+#start:hover {
+    opacity: 0.9;
+}
+
+#stop {
+    background: #FF4444;
+    color: white;
+}
+
+#stop:hover {
+    opacity: 0.9;
+}
+
+#reset {
+    background: white;
+    color: #000;
+}
+
+#reset:hover {
+    opacity: 0.9;
+}
+
+.ativo {
+    opacity: 0.6;
+}
+
+/* Removendo sombras e efeitos extras para ficar mais clean */
+.botoes:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.botoes:active {
+    transform: scale(0.97);
+}
+
+/* Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos do Relógio Analógico */
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    padding: 20px;
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: white;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ... outros estilos do relógio analógico permanecem iguais ... */
+
+/* Estilos do Cronômetro Digital */
+#caixa-numeros {
+    width: 280px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.numeros {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    display: inline-block;
+    min-width: 50px;
+}
+
+.numero-verde {
+    color: #C5FB01;
+}
+
+/* Estilos dos Botões */
+#caixa-botoes {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.botoes {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#start {
+    background: #C5FB01;
+    color: #000;
+}
+
+#stop {
+    background: #FF4444;
+    color: white;
+}
+
+#reset {
+    background: white;
+    color: #000;
+}
+
+.botoes:hover {
+    opacity: 0.9;
+}
+
+.botoes:active {
+    transform: scale(0.97);
+}
+
+.ativo {
+    opacity: 0.6;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .clock {
+        width: 250px;
+        height: 250px;
+    }
+
+    #caixa-numeros {
+        width: 260px;
+        padding: 12px 15px;
+    }
+
+    .numeros {
+        font-size: 32px;
+        min-width: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hand {
+        transform-origin: 50% 80%;
+    }
+
+    .hour-hand {
+        height: 45px;
+    }
+
+    .min-hand {
+        height: 60px;
+    }
+
+    .second-hand {
+        height: 70px;
+    }
+
+    #caixa-numeros {
+        width: 230px;
+        padding: 10px;
+    }
+
+    .numeros {
+        font-size: 28px;
+        min-width: 40px;
+    }
+
+    #caixa-botoes {
+        gap: 10px;
+    }
+
+    .botoes {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 320px) {
+    .clock {
+        width: 180px;
+        height: 180px;
+    }
+
+    #caixa-numeros {
+        width: 200px;
+    }
+
+    .numeros {
+        font-size: 24px;
+        min-width: 35px;
+    }
+
+    .botoes {
+        padding: 6px 15px;
+        font-size: 11px;
+    }
+
+    #caixa-botoes {
+        gap: 8px;
+    }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .clock {
+        width: 180px;
+        height: 180px;
+    }
+
+    .right-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #caixa-numeros {
+        margin-top: 0;
+    }
+}
+
+/* Suporte para telas de alta densidade (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .clock-face {
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    }
+}
+
+/* Prevenção para dispositivos com tela muito pequena */
+@media (max-width: 280px) {
+    .container {
+        transform: scale(0.9);
+    }
+}
+
+/* Ajustes para modo escuro do sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #000;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <title>Cronômetro Analógico</title>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="clock-face">
+                <!-- Números do relógio -->
+                <div class="number number-12">12</div>
+                <div class="number number-1">1</div>
+                <div class="number number-2">2</div>
+                <div class="number number-3">3</div>
+                <div class="number number-4">4</div>
+                <div class="number number-5">5</div>
+                <div class="number number-6">6</div>
+                <div class="number number-7">7</div>
+                <div class="number number-8">8</div>
+                <div class="number number-9">9</div>
+                <div class="number number-10">10</div>
+                <div class="number number-11">11</div>
+                
+                <!-- Marcadores -->
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                <div class="marker"></div>
+                
+                <!-- Ponteiros -->
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
+
+        <div id="caixa-numeros">
+            <span class="numeros" id="horas">00</span>
+            <span class="numeros">:</span>
+            <span class="numeros" id="minutos">00</span>
+            <span class="numeros">:</span>
+            <span class="numeros" id="segundos">00</span>
+            <span class="numeros">:</span>
+            <span class="numeros numero-verde" id="mili">00</span>
+        </div>
+        
+        <div id="caixa-botoes">
+            <button class="botoes" id="start">Start</button>
+            <button class="botoes" id="stop">Stop</button>
+            <button class="botoes" id="reset">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
